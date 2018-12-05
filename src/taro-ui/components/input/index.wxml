@@ -1,0 +1,64 @@
+<block>
+    <view class="{{anonymousState__temp6}}" style="{{anonymousState__temp7}}">
+        <view class="{{anonymousState__temp8}}" bindtap="onClick" data-e-onClick-so="this">
+            <block wx:if="{{icon && icon.value}}">
+                <view class="at-input__prefix">
+                    <at-icon value="{{icon.value}}" __triggerObserer="{{ _triggerObserer }}"
+                    color="{{icon.color}}" size="{{icon.size}}"></at-icon>
+                </view>
+            </block>
+            <block wx:if="{{title}}">
+                <label class="{{anonymousState__temp9}}" for="{{name}}">{{title}}</label>
+            </block>
+            <block>
+                <block wx:if="{{type === 'date'}}">
+                    <picker class="{{_$anonymousState__temp}}" end="{{_$end}}" mode="{{type}}"
+                    disabled="{{disabled}}" bindchange="onInput" data-e-onInput-so="this">{{value || placeholder}}</picker>
+                </block>
+                <block wx:elif="{{type === 'selector'}}">
+                    <picker class="{{_$anonymousState__temp2}}" mode="{{type}}" range="{{options}}"
+                    disabled="{{disabled}}" bindchange="handleSelect" data-e-handleSelect-so="this">{{value || placeholder}}</picker>
+                </block>
+                <block wx:elif="{{type === 'checkbox'}}">
+                    <view class="at-input__input at-input__checkbox">
+                        <view wx:key="{{option.$$original.value}}" class="at-checkbox__option_container"
+                        bindtap="handleClick" wx:for="{{loopArray0}}" wx:for-item="option" data-e-handleClick-so="this"
+                        data-e-handleClick-a-a="{{option.$$original}}">
+                            <view class="{{option.$loopState__temp4}}">
+                                <view class="at-checkbox__icon_container">
+                                    <at-icon value="check" __triggerObserer="{{ _triggerObserer }}" size="14"
+                                    color="#fff"></at-icon>
+                                </view>
+                            </view>
+                            <view class="at-checkbox__title">{{option.$$original.label}}</view>
+                        </view>
+                    </view>
+                </block>
+                <input class="at-input__input" id="{{name}}" name="{{name}}" type="{{type}}"
+                placeholder-style="{{placeholderStyle}}" placeholder-class="{{_$anonymousState__temp3}}"
+                placeholder="{{placeholder}}" cursor-spacing="{{cursorSpacing}}" maxlength="{{maxlength}}"
+                auto-focus="{{autoFocus}}" value="{{value}}" confirm-type="{{confirmType}}"
+                cursor="{{cursor}}" selection-start="{{selectionStart}}" selection-end="{{selectionEnd}}"
+                adjust-position="{{adjustPosition}}" disabled="{{disabled}}" bindinput="onInput"
+                bindchange="onInput" bindfocus="onFocus" bindblur="onBlur" bindconfirm="onConfirm"
+                wx:else data-e-onInput-so="this" data-e-onFocus-so="this" data-e-onBlur-so="this"
+                data-e-onConfirm-so="this" />
+            </block>
+            <block wx:if="{{clear && value}}">
+                <view class="at-input__icon" bindtouchstart="clearValue" data-e-clearValue-so="this">
+                    <at-icon value="close-circle" __triggerObserer="{{ _triggerObserer }}"
+                    color="#ccc" size="15"></at-icon>
+                </view>
+            </block>
+            <block wx:if="{{error}}">
+                <view class="at-input__icon" bindtouchstart="onErrorClick" data-e-onErrorClick-so="this">
+                    <at-icon value="alert-circle" __triggerObserer="{{ _triggerObserer }}"
+                    color="#FF4949" size="15"></at-icon>
+                </view>
+            </block>
+            <view class="at-input__children">
+                <slot></slot>
+            </view>
+        </view>
+    </view>
+</block>

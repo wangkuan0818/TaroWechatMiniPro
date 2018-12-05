@@ -1,0 +1,124 @@
+@import '../../style/theme/default.scss';
+@import "../../style/mixins/index.scss";
+
+.at-input {
+  padding: $spacing-v-md 0;
+  background-color: $color-bg;
+  color: $color-text-base;
+  @include border-thin-bottom($width: 1PX);
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__prefix {
+    width: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    margin-right: $spacing-h-md;
+    width: 172px;
+    font-size: $font-size-lg;
+    line-height: $line-height-zh;
+    vertical-align: middle;
+    text-align: left;
+    &.justify {
+      width: 137px;
+      padding-right: 35px;
+      margin-top: -48px;
+      transform: translate3d(0, 50%, 0);
+      text-align: justify;
+      &::after {
+        width: 100%;
+        display: inline-block;
+        content: '';
+      }
+    }
+  }
+
+  &__input {
+    flex: 1;
+    display: inline-block;
+    padding-right: $spacing-v-md;
+    font-size: $font-size-lg;
+    line-height: $line-height-zh;
+    vertical-align: middle;
+    @include placeholder;
+  }
+
+  &__checkbox {
+    display: flex;
+    .at-checkbox__option_container {
+      min-width: 200px;
+      align-items: center;
+    }
+  }
+
+  input {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  &__icon {
+    display: inline-block;
+    padding: $spacing-v-xs $spacing-v-md $spacing-v-xs 0;
+    text-align: center;
+    line-height: 1;
+    font-size: $font-size-lg;
+  }
+
+  &__children {
+    display: inline-flex;
+    @include border-thin-left;
+
+    > view,
+    div,
+    span,
+    text,
+    image,
+    .taro-img {
+      display: inline-block;
+      padding: 0 $spacing-v-md;
+      color: $color-brand-dark;
+      font-size: $font-size-lg;
+      text-align: center;
+    }
+
+    > image,
+    img,
+    .taro-img {
+      display: inline-block;
+      width: 145px;
+      height: 60px;
+      vertical-align: middle;
+    }
+  }
+
+  &--error {
+    color: $color-error;
+  }
+
+  &--disabled {
+    opacity: $opacity-disabled;
+  }
+
+  &--without-border {
+    border: none;
+  }
+}
+
+.at-input-2 {
+  .at-input {
+    &__title {
+      line-height: 2;
+    }
+    &__input {
+      line-height: 2;
+    }
+  }
+}

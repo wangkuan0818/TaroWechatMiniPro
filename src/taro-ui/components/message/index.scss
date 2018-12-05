@@ -1,0 +1,42 @@
+@import "../../style/theme/default.scss";
+@import "../../style/mixins/index.scss";
+
+$message-timer: 300ms;
+
+.at-message {
+  z-index: $zindex-action-sheet;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  visibility: hidden;
+  transition: visibility $message-timer $timing-func;
+  &--active {
+    visibility: visible;
+    .at-message-content {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  &-content {
+    padding: 10px;
+    color: #fff;
+    font-size: 28px;
+    text-align: center;
+    transform: translate3d(0, -100%, 0);
+    transition: transform $message-timer $timing-func;
+  }
+  &.success {
+    .at-message-content {
+      background-color: #13CE66;
+    }
+  }
+  &.warn {
+    .at-message-content {
+      background-color: #DE8C17;
+    }
+  }
+  &.error {
+    .at-message-content {
+      background-color: #FF4949;
+    }
+  }
+}

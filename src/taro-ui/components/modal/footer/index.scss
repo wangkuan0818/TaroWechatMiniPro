@@ -1,0 +1,17 @@
+@import "../../../style/mixins/index";
+@import "../../../style/theme/default";
+
+.at-modal-footer {
+  padding: 0 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  at-button {
+    padding: 0 12px;
+    flex: 1;
+  }
+  .at-button {
+    color: #696969;
+    background-color: #EFEFEF;
+  }
+}

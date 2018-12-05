@@ -1,0 +1,40 @@
+@import '../../style/theme/default.scss';
+@import '../../style/mixins/index.scss';
+
+.at-accordion {
+  &__header {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: $font-size-lg;
+    font-size: $font-size-lg;
+    padding: $spacing-v-lg $spacing-h-lg;
+    @include border-thin-bottom($width: 1PX);
+    @include active;
+  }
+
+  &__title {
+    flex: 1;
+    text-align: left;
+    @include line;
+  }
+
+  &__content {
+    position: relative;
+    width: 100%;
+    transition: height 0.3s;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1PX;
+      position: absolute;
+      bottom: -1PX;
+      left: 0;
+      @include border-thin-top($width: 1PX);
+    }
+  }
+}
