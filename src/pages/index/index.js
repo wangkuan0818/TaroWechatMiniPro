@@ -1,5 +1,5 @@
-import Taro, { Component } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import Taro, {Component} from '@tarojs/taro'
+import {View, Text} from '@tarojs/components'
 import './index.less'
 
 export default class Index extends Component {
@@ -8,17 +8,22 @@ export default class Index extends Component {
     navigationBarTitleText: '首页'
   }
 
-  componentWillMount () { }
+  componentWillMount() {
+  }
 
-  componentDidMount () { }
+  componentDidMount() {
+  }
 
-  componentWillUnmount () { }
+  componentWillUnmount() {
+  }
 
-  componentDidShow () { }
+  componentDidShow() {
+  }
 
-  componentDidHide () { }
+  componentDidHide() {
+  }
 
-  render () {
+  render() {
     return (
       <View className='index'>
         <Text>Hello world!</Text>
